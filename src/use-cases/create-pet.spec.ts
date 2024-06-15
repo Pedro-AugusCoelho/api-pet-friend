@@ -14,17 +14,17 @@ describe("Create Pet Use Case", () => {
   });
 
   it("Should to create pet", async () => {
-    const newPet = await petsRepository.create({
+    const { pet } = await sut.execute({
       name: "Federico",
       energy: "MEDIA",
       environment: "MEDIO",
       independence: "ALTA",
       size: 40,
-      user_id: "ONG-01",
+      userId: "ONG-01",
       year: 2,
       about: "Sobre o cão",
     });
 
-    expect(newPet.id).toEqual(expect.any(String));
+    expect(pet.id).toEqual(expect.any(String));
   });
 });

@@ -1,7 +1,7 @@
 import { PetRepository } from "@/repositories/pet-repository";
 
 type TypeLevel = "BAIXA" | "MEDIA" | "ALTA";
-type TypeEnvironment = "AMPLO";
+type TypeEnvironment = "AMPLO" | "MEDIO" | "PEQUENO";
 
 interface CreatePetUseCaseRequest {
   name: string;
@@ -27,7 +27,7 @@ export class CreatePetUseCase {
     userId,
     year,
   }: CreatePetUseCaseRequest) {
-    const pet = this.petRepository.create({
+    const pet = await this.petRepository.create({
       name,
       about,
       energy,

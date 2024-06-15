@@ -24,4 +24,10 @@ export class InMemoryPetsRepository implements PetRepository {
 
     return pet;
   }
+
+  async searchMany(query: string, page: number) {
+    return this.items
+      .filter((item) => item.name.includes(query))
+      .slice((page - 1) * 20, page * 20);
+  }
 }
