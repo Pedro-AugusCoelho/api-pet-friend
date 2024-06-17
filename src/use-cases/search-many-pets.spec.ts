@@ -36,7 +36,9 @@ describe("Search Pet Use Case", () => {
     });
 
     const { searchPets } = await sut.execute({
-      query: "Federico",
+      name: "Federico",
+      energy: "MEDIA",
+      codCity: "010101",
       page: 1,
     });
 

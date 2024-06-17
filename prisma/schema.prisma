@@ -37,6 +37,11 @@ model User {
   password_hash String
   role          Role     @default(MEMBER)
   created_at    DateTime @default(now())
+  city          String
+  cod_city      String
+  state         String
+  cod_state     String
+  telephone     String
 
   Pets Pet[]
 
