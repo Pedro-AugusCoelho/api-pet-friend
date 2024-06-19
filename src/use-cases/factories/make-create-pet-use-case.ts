@@ -3,7 +3,7 @@ import { CreatePetUseCase } from "../create-pet";
 
 export function makeCreatePetUseCase() {
   const petRepository = new PrismaPetRepository();
-  const authenticateUseCase = new CreatePetUseCase(petRepository);
+  const createPetUseCase = new CreatePetUseCase(petRepository);
 
-  return authenticateUseCase;
+  return createPetUseCase;
 }
